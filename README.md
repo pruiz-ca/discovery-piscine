@@ -1,5 +1,5 @@
 # Javascript-HTML-CSS-Discovery-Piscine-42
-These are my projects done during the Javascript Discovery Piscine in 42 Madrid
+These are my projects done during the Javascript Discovery Piscine at 42 Madrid
 
 [![jaeskim's 42 stats](https://badge42.herokuapp.com/api/stats/pruiz-ca?cursus=Discovery%20Piscine)](https://github.com/pruiz-ca)
 
