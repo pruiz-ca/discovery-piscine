@@ -1,0 +1,142 @@
+:root {
+	--black: #0F0C24;
+	--purple: #A350A3;
+	--pink: #C1436D;
+}
+
+/* Stars
+------------------------------------- */
+#space, .stars {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  }
+
+  .stars {
+	background-image:
+	  radial-gradient(2px 2px at 20px 30px, #A350A3, rgba(0,0,0,0)),
+	  radial-gradient(2px 2px at 50px 160px, grey, rgba(0,0,0,0)),
+	  radial-gradient(2px 2px at 130px 80px, gainsboro, rgba(0,0,0,0)),
+	  radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+	background-repeat: repeat;
+	background-size: 200px 200px;
+	animation: zoom 16s infinite;
+	opacity: 0;
+  }
+
+  .stars:nth-child(1) {
+	background-position: 50% 50%;
+	animation-delay: 0s;
+  }
+  .stars:nth-child(2) {
+	background-position: 20% 60%;
+	animation-delay: 4s;
+  }
+  .stars:nth-child(3) {
+	background-position: -20% -30%;
+	animation-delay: 8s;
+  }
+  .stars:nth-child(4) {
+	background-position: 40% -80%;
+	animation-delay: 16s;
+  }
+  .stars:nth-child(5) {
+	background-position: -20% 30%;
+	animation-delay: 32s;
+  }
+
+  @keyframes zoom {
+	0% {
+	  opacity: 0.2;
+	  transform: scale(0.5);
+	  animation-timing-function: ease-in;
+	}
+	85% {
+	  opacity: 1;
+	  transform: scale(2.8);
+	  animation-timing-function: linear;
+	}
+	100% {
+	  opacity: 0;
+	  transform: scale(3);
+	}
+  }
+
+/* Webpage
+------------------------------------- */
+html, body {
+	height: 100%;
+	min-width: 500px;
+	min-height: 500px;
+}
+
+h1 {
+	color: var(--pink);
+	font-size: 3vw;
+	padding-bottom: 5%;
+	margin: 0;
+}
+
+body {
+	overflow: hidden;
+	min-width: 500px;
+	margin: 0;
+	background-color: black;
+	font-family: 'Press Start 2P', cursive;
+}
+
+.container {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main {
+	width: 95%;
+	height: 90%;
+	background-color: var(--black);
+	border-radius: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.characters {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 30%;
+}
+
+.pedro {
+	background: url("Resources/FullLucas.png");
+	width: 137px;
+	height: 150px;
+	animation: rotatePlayer 4s steps(16) infinite;
+	z-index: 0;
+}
+
+.raquel {
+	background: url("Resources/FullDawn.png");
+	width: 137px;
+	height: 150px;
+	animation: rotatePlayer 4s steps(16) infinite;
+	z-index: 0;
+}
+
+@keyframes rotatePlayer {
+	0% {
+		background-position: 0px;
+	}
+	100% {
+		background-position: 2194px;
+	}
+}

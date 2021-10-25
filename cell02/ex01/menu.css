@@ -1,0 +1,49 @@
+body {
+	background-color: cornflowerblue;
+}
+
+h1 {
+	text-align: center;
+	color: papayawhip;
+}
+
+a {
+	display:block;
+	color: papayawhip;
+	text-decoration: none;
+	text-align: center;
+}
+
+a:hover {
+	color: cornflowerblue;
+}
+
+.dropdownGlobal {
+	width: 10%;
+	display: inline-block;
+}
+
+.dropdownGlobal:hover .dropdownContent {
+	display: block;
+}
+
+.dropdownButton {
+	background-color: papayawhip;
+	max-width: 120px;
+	min-width: 120px;
+}
+
+.dropdownButton:hover {
+	background-color:lemonchiffon;
+}
+
+.dropdownContent {
+	display: none;
+	background-color: rgb(70, 70, 70);
+	min-width: 120px;
+	max-width: 120px;
+}
+
+.dropdownContent:hover {
+	color: cornflowerblue;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Balloon</title>
+	<script>
+		function mouseClick() {
+			var balloon = document.getElementById("balloon");
+			var color = balloon.style.backgroundColor;
+			var w = balloon.style.width;
+			var h = balloon.style.height;
+
+			if (parseInt(w) + 10 > 420) {
+				balloon.style.width = "200px";
+				balloon.style.height = "200px";
+			}
+			else {
+				balloon.style.width = parseInt(w) + 10 + "px";
+				balloon.style.height = parseInt(h) + 10 + "px";
+			}
+			if (color == "red")
+				color = "green";
+			else if (color == "green")
+				color = "blue";
+			else
+				color = "red";
+			balloon.style.backgroundColor = color;
+		}
+
+		function mouseLeaves() {
+			var balloon = document.getElementById("balloon");
+			var color = balloon.style.backgroundColor;
+			var w = balloon.style.width;
+			var h = balloon.style.height;
+
+			if (parseInt(balloon.style.width) - 5 >= 200) {
+				balloon.style.width = parseInt(w) - 5 + "px";
+				balloon.style.height = parseInt(h) - 5 + "px";
+				if (color == "red")
+					color = "blue";
+				else if (color == "blue")
+					color = "green";
+				else
+					color = "red";
+				balloon.style.backgroundColor = color;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="balloon" style="width: 200px; height: 200px; background-color: red; border-radius: 50%" onclick="mouseClick()" onmouseout="mouseLeaves()">
+	</div>
+</body>
+</html>

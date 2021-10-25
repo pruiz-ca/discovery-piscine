@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Balloon</title>
+</head>
+<body>
+	<div id="balloon" style="width: 200px; height: 200px; background-color: rgb(255, 0, 0); border-radius: 50%">
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$("#balloon").click(mouseClick);
+			$("#balloon").mouseleave(mouseLeaves);
+		})
+
+		function mouseClick() {
+			var		d = $(this).width();
+			var		color = $(this).css("background-color");
+
+			if (d + 10 > 420)
+				$(this).width(200).height(200);
+			else
+				$(this).width(d + 10).height(d + 10);
+			if (color == "rgb(255, 0, 0)")
+				color = "rgb(0, 128, 0)";
+			else if (color == "rgb(0, 128, 0)")
+				color = "rgb(0, 0, 255)";
+			else
+				color = "rgb(255, 0, 0)";
+			$(this).css("background-color", color);
+		}
+
+		function mouseLeaves() {
+			var		d = $(this).width();
+			var		color = $(this).css("background-color");
+
+			if (d - 5 >= 200) {
+				$(this).width(d - 5).height(d - 5);
+				if (color == "rgb(255, 0, 0)")
+					color = "rgb(0, 0, 255)";
+				else if (color == "rgb(0, 0, 255)")
+					color = "rgb(0, 128, 0)";
+				else
+					color = "rgb(255, 0, 0)";
+				$(this).css("background-color", color);
+			}
+		}
+	</script>
+
+</body>
+</html>
